@@ -4,6 +4,7 @@
     <title></title>
 </head>
 <body>
+
   <ul>
     <li><a href='/nueva_maquinaria'> Publicar Maquinaria </a></li>
     <li><a href='/nuevo_banner'> Publicar Banner </a></li>
@@ -11,8 +12,9 @@
   </ul>
 
   <form id='formulario' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
-  {{formulario.tipo.label}}{{formulario.tipo}}
-  <input type="submit"/>
-</form>
+    {{formulario.banner.label}}{{formulario.banner}}
+    <input type="submit"/>
+  </form>
+
 </body>
 </html>

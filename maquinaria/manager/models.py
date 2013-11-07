@@ -26,6 +26,7 @@ class Anuncio(models.Model):
   alquiler = models.BooleanField()
   marca = models.CharField(max_length=100)
   descripcion = models.CharField(max_length=100)
+  aprobado = models.BooleanField(default=False)
 
 class Imagen(models.Model):
   imagen = models.ImageField(upload_to='carga')

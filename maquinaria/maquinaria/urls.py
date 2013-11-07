@@ -16,5 +16,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
     url('^nueva_maquinaria/$', 'manager.views.nueva_maquinaria'),
+    url('^nuevo_banner/$', 'manager.views.nuevo_banner'),
+    url('^cerrar_sesion/$', 'manager.views.cerrar_sesion'),
 )
