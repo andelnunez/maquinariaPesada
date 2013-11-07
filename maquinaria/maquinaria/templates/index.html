@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id='formulario' enctype='multipart/form-data' method='post' action=''>
+    {% csrf_token %}
+        {{error_login}}
+        {{formulario}}
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <ul>
+        <li><a href="#">Anuncios</a></li>
+    </ul>
+
+    <h3>Anuncios</h3>
+    {% for anuncio in anuncios %}
+      {{anuncio.usuario.username}}
+      {{anuncio.maquinaria.tipo}}
+      {{anuncio.modelo}}
+      {{anuncio.alquiler}}
+      {{anuncio.marca}}
+      {{anuncio.descripcion}}
+
+      {% empty %}
+        Disculpe, no hay anuncios publicados en este momento
+    {% endfor %}
+</body>
+</html>
