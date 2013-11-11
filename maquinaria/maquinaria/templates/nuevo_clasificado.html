@@ -13,7 +13,12 @@
     </ul>
 
     <form id='formulario' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
-        {{formulario.banner.label}}{{formulario.banner}}
+        {{formulario.titulo.label}}{{formulario.titulo}}
+        {{formulario.tipo.label}}{{formulario.tipo}}
+        {{formulario.descripcion.label}}{{formulario.descripcion}}
+        {{formulario.imagen.label}}{{formulario.imagen}}
+
+
         <input type="submit"/>
     </form>
 

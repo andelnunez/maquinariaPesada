@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+</head>
+<body>
+    <form id='formulario' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <th>Aprobar</th>
+            </tr>
+            {% for anuncio in lista_anuncios %}
+                <tr>
+                    <td>{{anuncio.usuario.username}}</td>
+                    <td> <input id="{{anuncio.id}}" type="checkbox" name="aprobar_anuncio" value="{{anuncio.id}}"> </td>
+                </tr>
+                {% empty %}
+                    'No hay anuncios pendientes por aprobar en este momento
+            {% endfor %}
+        </table>
+        <input type="submit" value="Aprobar" />
+    </form>
+</body>
+</html>

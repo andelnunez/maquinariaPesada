@@ -17,7 +17,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
-    url('^nueva_maquinaria/$', 'manager.views.nueva_maquinaria'),
     url('^nuevo_banner/$', 'manager.views.nuevo_banner'),
+    url('^nuevo_clasificado/$', 'manager.views.nuevo_clasificado'),
     url('^cerrar_sesion/$', 'manager.views.cerrar_sesion'),
+    url('^nuevo_anuncio/$', 'manager.views.nuevo_anuncio'),
+    url('^revisar_anuncio/$', 'manager.views.revisar_anuncio'),
+    url('^revisar_clasificado/$', 'manager.views.revisar_clasificado'),
+    url('^clasificados/$', 'manager.views.clasificados'),
 )

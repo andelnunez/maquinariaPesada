@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id='formulario' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>Usuario</th>
+                <th>Aprobar</th>
+            </tr>
+            {% for clasificado in lista_clasificados %}
+                <tr>
+                    <td>{{clasificado.titulo}}</td>
+                    <td>{{clasificado.usuario.username}}</td>
+                    <td> <input id="{{clasificado.id}}" type="checkbox" name="aprobar_clasificado" value="{{clasificado.id}}"> </td>
+                </tr>
+                {% empty %}
+                    'No hay clasificados pendientes por aprobar en este momento
+            {% endfor %}
+        </table>
+        <input type="submit" value="Aprobar" />
+    </form>
+
+</body>
+</html>

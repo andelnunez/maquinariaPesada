@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <ul>
+        <li><a href="/">Anuncios</a></li>
+        <li><a href="/clasificados">Clasificados</a></li>
+    </ul>
+
+    <h3>Clasificados</h3>
+    {% for clasificado in clasificados %}
+        {{clasificado.titulo}}
+        {{clasificado.tipo}}
+        {{clasificado.usuario.username}}
+      {% empty %}
+        Disculpe, no hay clasificados publicados en este momento
+    {% endfor %}
+
+</body>
+</html>
